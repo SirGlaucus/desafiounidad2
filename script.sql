@@ -2,6 +2,7 @@
 -- 1. Cargar el respaldo de la base de datos unidad2.sql.
 
 CREATE DATABASE unidad2;
+-- La siguiente linea de codigo se debe ejecutar en la terminal
 -- SOLUCION: psql -U postgres unidad2 < unidad2.sql (Verifica que en el CDM estes en la carpeta donde se encuentra el archivo "unidad2.sql")
 
 
