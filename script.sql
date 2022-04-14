@@ -1,13 +1,14 @@
 -- Requerimientos
 -- 1. Cargar el respaldo de la base de datos unidad2.sql.
 
+CREATE DATABASE unidad2;
 -- SOLUCION: psql -U postgres unidad2 < unidad2.sql (Verifica que en el CDM estes en la carpeta donde se encuentra el archivo "unidad2.sql")
+
 
 -- 2. El cliente usuario01 ha realizado la siguiente compra:
 -- ● producto: producto9.
 -- ● cantidad: 5.
 -- ● fecha: fecha del sistema.
-
 
 -- Mediante el uso de transacciones, realiza las consultas correspondientes para este
 -- requerimiento y luego consulta la tabla producto para validar si fue efectivamente
@@ -31,7 +32,6 @@ COMMIT;
 -- Mediante el uso de transacciones, realiza las consultas correspondientes para este
 -- requerimiento y luego consulta la tabla producto para validar que si alguno de ellos
 -- se queda sin stock, no se realice la compra.
-
 
 -- NOTA IMPORTANTE: El VALUE de compra_id puede variar, verificar primero con SELECT * FROM compra; antes de ingresar el siguiente insert
 BEGIN TRANSACTION;
@@ -60,7 +60,6 @@ SELECT * FROM detalle_compra;
 UPDATE producto SET stock = stock - 3 WHERE id = 8; -- ERROR, viola la regla del stock. No puede ser menor a 0.
 SELECT * FROM producto;
 ROLLBACK; -- LA OPERACION FALLO, SE REALIZO UN ROLLBACK
-
 
 
 -- 4. Realizar las siguientes consultas:
